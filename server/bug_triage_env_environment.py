@@ -30,43 +30,39 @@ except ImportError:
 
 
 class BugTriageEnvironment(Environment):
-    """
-    Stateful RL environment for simulating an automated bug triage pipeline.
-    
-    This environment processes a pipeline of bugs through forensic analysis,
-    historical duplicate searching via Vector DB, and developer resource allocation.
-    """
-
-    # Enable concurrent WebSocket sessions for parallel evaluation.
-    SUPPORTS_CONCURRENT_SESSIONS: bool = True
+    # Class-level cache to prevent re-loading on every reset
+    _historical_dataset = None
+    _pipeline_dataset = None
+    _team_states = None
+    _vector_store = None
 
     def __init__(self, max_steps: Optional[int] = None):
-        """
-        Initialize the Bug Triage environment and load datasets.
-        
-        Args:
-            max_steps: Maximum number of bugs to process before ending the episode.
-        """
         super().__init__()
         self._state = State(episode_id=str(uuid4()), step_count=0)
         self.search_attempts = 0
 
-        # Resolve absolute paths for Docker compatibility
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        data_dir = os.path.join(os.path.dirname(current_dir), "data")
+        # Only load data if it hasn't been loaded by a previous instance
+        if BugTriageEnvironment._historical_dataset is None:
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            data_dir = os.path.join(os.path.dirname(current_dir), "data")
 
-        # Load Environment Data
-        with open(os.path.join(data_dir, "historical_bugs.json"), 'r', encoding='utf-8') as f:
-            self.historical_dataset = json.load(f)
+            with open(os.path.join(data_dir, "historical_bugs.json"), 'r', encoding='utf-8') as f:
+                BugTriageEnvironment._historical_dataset = json.load(f)
             
-        with open(os.path.join(data_dir, "ongoing_pipeline.json"), 'r', encoding='utf-8') as f:
-            self.pipeline_dataset = json.load(f)
+            with open(os.path.join(data_dir, "ongoing_pipeline.json"), 'r', encoding='utf-8') as f:
+                BugTriageEnvironment._pipeline_dataset = json.load(f)
             
-        with open(os.path.join(data_dir, "developer_queues.json"), 'r', encoding='utf-8') as f:
-            self.team_states = json.load(f)
+            with open(os.path.join(data_dir, "developer_queues.json"), 'r', encoding='utf-8') as f:
+                BugTriageEnvironment._team_states = json.load(f)
 
-        # Initialize Forensic Tools
-        self.vector_store = BugVectorStore(self.historical_dataset)
+            # Initialize Vector Store once
+            BugTriageEnvironment._vector_store = BugVectorStore(BugTriageEnvironment._historical_dataset)
+
+        # Reference the cached data
+        self.historical_dataset = BugTriageEnvironment._historical_dataset
+        self.pipeline_dataset = BugTriageEnvironment._pipeline_dataset
+        self.team_states = BugTriageEnvironment._team_states
+        self.vector_store = BugTriageEnvironment._vector_store
         
         # Configuration
         self.max_steps = max_steps or len(self.pipeline_dataset)
