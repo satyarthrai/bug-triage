@@ -1,0 +1,24 @@
+spec_version: 1
+name: bug_triage_env
+type: space
+
+description: RL-based Bug Triage System featuring Forensic Routing, RAG Deduplication, and Live Queue Preemption.
+
+runtime: fastapi
+app: server.app:app
+port: 8000
+
+tasks:
+  - id: triage_easy
+    description: Phase 1 only. Analyze forensics and route to the correct team.
+  - id: triage_medium
+    description: Phase 1 and 2. Route the bug and use RAG to identify historical duplicates.
+  - id: triage_hard
+    description: Full pipeline. Route, deduplicate, and manage developer queue preemption.
+
+tags:
+  - openenv
+  - reinforcement-learning
+  - bug-triage
+  - rag
+  - agentic-workflow

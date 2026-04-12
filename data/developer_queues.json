@@ -1,0 +1,82 @@
+{
+    "webdav": {
+        "active_task": "Eclipse_Sprint_754",
+        "active_task_severity": "normal",
+        "backlog_size": 12
+    },
+    "team": {
+        "active_task": "Eclipse_Sprint_381",
+        "active_task_severity": "normal",
+        "backlog_size": 3
+    },
+    "ant": {
+        "active_task": "Eclipse_Sprint_854",
+        "active_task_severity": "normal",
+        "backlog_size": 12
+    },
+    "update  (deprecated - use rt>equinox>p2)": {
+        "active_task": "Eclipse_Sprint_658",
+        "active_task_severity": "critical",
+        "backlog_size": 7
+    },
+    "resources": {
+        "active_task": "Eclipse_Sprint_132",
+        "active_task_severity": "critical",
+        "backlog_size": 4
+    },
+    "text": {
+        "active_task": "Eclipse_Sprint_338",
+        "active_task_severity": "normal",
+        "backlog_size": 1
+    },
+    "compare": {
+        "active_task": "Eclipse_Sprint_674",
+        "active_task_severity": "normal",
+        "backlog_size": 11
+    },
+    "debug": {
+        "active_task": "Eclipse_Sprint_818",
+        "active_task_severity": "normal",
+        "backlog_size": 4
+    },
+    "swt": {
+        "active_task": "Eclipse_Sprint_559",
+        "active_task_severity": "normal",
+        "backlog_size": 13
+    },
+    "scripting": {
+        "active_task": "Eclipse_Sprint_990",
+        "active_task_severity": "critical",
+        "backlog_size": 13
+    },
+    "search": {
+        "active_task": "Eclipse_Sprint_263",
+        "active_task_severity": "normal",
+        "backlog_size": 6
+    },
+    "ui": {
+        "active_task": "Eclipse_Sprint_384",
+        "active_task_severity": "normal",
+        "backlog_size": 13
+    },
+    "runtime": {
+        "active_task": "Eclipse_Sprint_444",
+        "active_task_severity": "normal",
+        "backlog_size": 7
+    },
+    "doc": {
+        "active_task": "Eclipse_Sprint_199",
+        "active_task_severity": "normal",
+        "backlog_size": 6
+    },
+    "releng": {
+        "active_task": "Eclipse_Sprint_718",
+        "active_task_severity": "normal",
+        "backlog_size": 1
+    },
+    "user assistance": {
+        "active_task": "Eclipse_Sprint_847",
+        "active_task_severity": "normal",
+        "backlog_size": 2
+    }
+}

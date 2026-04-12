@@ -1,0 +1,55 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the BSD-style license found in the
+# LICENSE file in the root directory of this source tree.
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openenv-bug_triage_env"
+version = "0.1.0"
+description = "RL-based Bug Triage Environment for OpenEnv Hackathon"
+requires-python = ">=3.10"
+dependencies = [
+    "openenv-core[core]>=0.2.2",
+    "fastapi>=0.115.0",
+    "uvicorn>=0.24.0",
+    "sentence-transformers==2.6.1",
+    "faiss-cpu==1.8.0",
+    "numpy<2.0.0",
+    "python-dotenv"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.scripts]
+# Enables running via: uv run server
+server = "bug_triage_env.server.app:main"
+
+[tool.setuptools]
+include-package-data = true
+# Includes the core package, server logic, and the critical data folder
+packages = ["bug_triage_env", "bug_triage_env.server", "bug_triage_env.data"]
+package-dir = { "bug_triage_env" = ".", "bug_triage_env.server" = "server", "bug_triage_env.data" = "data" }
+
+[tool.setuptools.package-data]
+# Ensures JSON datasets are bundled into the Docker image/site-packages
+"bug_triage_env.data" = ["*.json", "*.csv", "*.txt"]
+
+# ==========================================================
+# ⚡️ SPEED OPTIMIZATION: Force lightweight CPU PyTorch
+# ==========================================================
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }

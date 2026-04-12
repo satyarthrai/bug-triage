@@ -1,0 +1,162 @@
+[
+    {
+        "id": 5549,
+        "user_description": "TVT: Suggestion - Document the mininum recommended screen resolution for Workbench\n\nOur testers have found that 640x480 is not enough to display some dialogs; ; e.g.; the import/export dialogs have fields that are inaccessible in the lower ; resolutions (and the dialog is not resizable).; ; If 800x600 was the intended minimum; it should be stated somewhere in the ; programmer documentation.  FWIW; Windows seems to stick by the 640x480 minimum ; (or at least I was unable to find an exception).",
+        "route_to": "ui",
+        "severity": "low",
+        "duplicate_of": "new_bug",
+        "forensics": {
+            "repo": "eclipse_platform",
+            "labels": "Status: RESOLVED, Resolution: FIXED",
+            "raw_logs": "Version reported: 2.0"
+        },
+        "metadata": {
+            "created_at": "2001-11-05 16:17:00-05:00",
+            "priority_raw": "P4"
+        }
+    },
+    {
+        "id": 5934,
+        "user_description": "[Editor Mgmt] Add new external fil editor does not preserve icon\n\n20011107; ; If I add a new file editor teh icon doesnt show up; ; Windows->preferences; Workbench->File editor; Select *.xml; click add assciated editor; seelct external programs; IMPORTANT: click browse and select an executable with a different icon; do not chose the one in teh list; ; if you chose the one in teh list; teh icon will come with; if you select the ; same executable using browse; the icon will not; ; used to work in previous builds",
+        "route_to": "ui",
+        "severity": "medium",
+        "duplicate_of": "1944",
+        "forensics": {
+            "repo": "eclipse_platform",
+            "labels": "Status: RESOLVED, Resolution: DUPLICATE",
+            "raw_logs": "Version reported: 2.0"
+        },
+        "metadata": {
+            "created_at": "2001-11-14 16:36:00-05:00",
+            "priority_raw": "P3"
+        }
+    },
+    {
+        "id": 5562,
+        "user_description": "Synchronize with stream always throws exception\n\nBuild 20011105; ; It is not possible to use VCM (CVS) with that build.; ; 1. Select a project; 2. From its context menu: Team -> Synchronize; ; ==> ; ; Log: Tue Nov 06 09:04:22 GMT+01:00 2001; 4 org.eclipse.vcm.ui 1 Internal error; java.lang.Error: Unresolved compilation problem: ; \tPServerConnection cannot ; be resolved or is not a type; ; \tat java.lang.reflect.Constructor.newInstance(Native Method); \tat ; org.eclipse.vcm.internal.core.ccvs.client.PServerConnectionMethod.createConnecti; on(PServerConnectionMethod.java:21); \tat ; org.eclipse.vcm.internal.core.ccvs.CVSRepositoryLocation.createConnection(CVSRep; ositoryLocation.java:89); \tat ; org.eclipse.vcm.internal.core.ccvs.CVSRepositoryLocation.openConnection(CVSRepos; itoryLocation.java:202); \tat ; org.eclipse.vcm.internal.core.ccvs.client.Client.<init>(Client.java:229); \tat ; org.eclipse.vcm.internal.core.ccvs.CVSAdapter.internalFetchRemoteTree(CVSAdapter; .java:761); \tat ; org.eclipse.vcm.internal.core.ccvs.CVSAdapter.fetchRemoteTree(CVSAdapter.java:72; 8); \tat org.eclipse.vcm.internal.core.Subscriber.refresh(Subscriber.java:600); \tat org.eclipse.vcm.internal.core.Subscriber$3.run(Subscriber.java:563); \tat ; org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1184); \tat org.eclipse.vcm.internal.core.Subscriber.run(Subscriber.java:627); \tat ; org.eclipse.vcm.internal.core.SharingManager.run(SharingManager.java:772); \tat org.eclipse.vcm.internal.core.Subscriber.refresh(Subscriber.java:557); \tat ; org.eclipse.vcm.internal.ui.sync.Repository.doServerDelta(Repository.java:207); \tat ; org.eclipse.vcm.internal.ui.sync.Repository$2.execute(Repository.java:252); \tat ; org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.j; ava:64); \tat ; org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1184); \tat ; org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.jav; a:78); \tat ; org.eclipse.vcm.internal.ui.sync.Repository.localServerDelta(Repository.java:256; ); \tat ; org.eclipse.vcm.internal.ui.sync.SyncCompareInput$4.run(SyncCompareInput.java:47; 1); \tat ; org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1184); \tat ; org.eclipse.vcm.internal.ui.sync.SyncCompareInput.prepareInput(SyncCompareInput.; java:478); \tat ; org.eclipse.compare.CompareEditorInput.run(CompareEditorInput.java:291); \tat ; org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.jav; a:98)",
+        "route_to": "team",
+        "severity": "medium",
+        "duplicate_of": "new_bug",
+        "forensics": {
+            "repo": "eclipse_platform",
+            "labels": "Status: RESOLVED, Resolution: FIXED",
+            "raw_logs": "Version reported: 2.0"
+        },
+        "metadata": {
+            "created_at": "2001-11-06 04:11:00-05:00",
+            "priority_raw": "P3"
+        }
+    },
+    {
+        "id": 5552,
+        "user_description": "VCM leaves inconsistent resources\n\nWhen switching to use a new teamstream (INTEGRATION) for my project;I first ; connected my project to this new teamstream; and added its content (of course ; empty since new) to the workspace.; ; It did remove all my local content for the project; but the binary output.; When attempting to add a different version of my project; it did fail because of ; an inconsistent resource.; ; The only workaround is to force a refresh from local on the output folder prior ; to adding the project version.",
+        "route_to": "team",
+        "severity": "low",
+        "duplicate_of": "new_bug",
+        "forensics": {
+            "repo": "eclipse_platform",
+            "labels": "Status: RESOLVED, Resolution: INVALID",
+            "raw_logs": "Version reported: 2.0"
+        },
+        "metadata": {
+            "created_at": "2001-11-05 16:56:00-05:00",
+            "priority_raw": "P5"
+        }
+    },
+    {
+        "id": 5842,
+        "user_description": "Support to remove a change from the list\n\nSWT request:; support to remove/delete a change from a list/tree. SWT asks for it since they ; want to have a way to say they are done with this change.",
+        "route_to": "compare",
+        "severity": "medium",
+        "duplicate_of": "2027",
+        "forensics": {
+            "repo": "eclipse_platform",
+            "labels": "Status: RESOLVED, Resolution: DUPLICATE",
+            "raw_logs": "Version reported: 2.0"
+        },
+        "metadata": {
+            "created_at": "2001-11-13 09:53:00-05:00",
+            "priority_raw": "P3"
+        }
+    },
+    {
+        "id": 5551,
+        "user_description": "TVT text clipped.  Korean text is clipped on\n\nKorean text is clipped on text compare.  The top of the text is clipped off. ; ; To repro;reference TVT Case 10.1 ; http://jumpstart.raleigh.ibm.com/jumpstart/TVTDOCS/eclipsewbtvt.htm#_Toc52795487; 6",
+        "route_to": "compare",
+        "severity": "medium",
+        "duplicate_of": "new_bug",
+        "forensics": {
+            "repo": "eclipse_platform",
+            "labels": "Status: RESOLVED, Resolution: WONTFIX",
+            "raw_logs": "Version reported: 1.0"
+        },
+        "metadata": {
+            "created_at": "2001-11-05 16:51:00-05:00",
+            "priority_raw": "P3"
+        }
+    },
+    {
+        "id": 5827,
+        "user_description": "Allow importing of a project from the local file system\n\nAt the moment there is no convenient way to add an existing; project to the workspace.; This is particularly useful where your project is kept in a ; source control system not supported by Eclipse or the project; needs to be distributed in some other form.",
+        "route_to": "resources",
+        "severity": "medium",
+        "duplicate_of": "3101",
+        "forensics": {
+            "repo": "eclipse_platform",
+            "labels": "Status: RESOLVED, Resolution: DUPLICATE",
+            "raw_logs": "Version reported: 2.0"
+        },
+        "metadata": {
+            "created_at": "2001-11-12 20:04:00-05:00",
+            "priority_raw": "P3"
+        }
+    },
+    {
+        "id": 5560,
+        "user_description": "ESC on rename dialog renames the file\n\nBuild: 20011105; ; 1. Open Navigator view; 2. Select a file; 3. Context menu --> Rename; 4. Enter a new name; 5. Press ESC; ==> instead of aborting the operation the file is renamed.; ; Note: this one is not maje; ; Could be related: http://dev.eclipse.org/bugs/show_bug.cgi?id=2934",
+        "route_to": "ui",
+        "severity": "medium",
+        "duplicate_of": "new_bug",
+        "forensics": {
+            "repo": "eclipse_platform",
+            "labels": "Status: VERIFIED, Resolution: WORKSFORME",
+            "raw_logs": "Version reported: 2.0"
+        },
+        "metadata": {
+            "created_at": "2001-11-06 03:55:00-05:00",
+            "priority_raw": "P3"
+        }
+    },
+    {
+        "id": 5628,
+        "user_description": "Persist show version info\n\nThe summary says it all. We should persist the Show Version Info option that; appears on the Navigator in the Team Perspective.",
+        "route_to": "team",
+        "severity": "medium",
+        "duplicate_of": "239",
+        "forensics": {
+            "repo": "eclipse_platform",
+            "labels": "Status: RESOLVED, Resolution: DUPLICATE",
+            "raw_logs": "Version reported: 2.0"
+        },
+        "metadata": {
+            "created_at": "2001-11-07 12:01:00-05:00",
+            "priority_raw": "P3"
+        }
+    },
+    {
+        "id": 5712,
+        "user_description": "Cant save files when a network address is not assigned\n\nUnder Linux; if the machine is connected to a network; but a DNS; query for its name does not return an address; then the editor; will not save files.; ; An example of how this can occur:; - A laptop machine is configured to use DDNS on a corporate network.; - When connected to a network outside the corporate firewall;;   a DNS server will not correctly resolve its name.; ; A temporary workaround for this problem is to place an entry; in /etc/hosts for the machines name; assigning it to the; same address as localhost. However; doing this will cause; other system services (mail servers; etc.) to work incorrectly.; ; When this occurs; saving a file generates the following error in; the log window:; ; ; ; java.lang.NoClassDefFoundError: ; org/eclipse/core/internal/utils/UniversalUniqueIdentifier; \tat ; org.eclipse.core.internal.localstore.BlobStore.addBlob(BlobStore.java:26); \tat ; org.eclipse.core.internal.localstore.HistoryStore.addState(HistoryStore.java:107); \tat ; org.eclipse.core.internal.localstore.FileSystemResourceManager.write(FileSystemResourceManager.java:387); \tat ; org.eclipse.core.internal.resources.File.internalSetContents(File.java:190); \tat org.eclipse.core.internal.resources.File.setContents(File.java:213); \tat org.eclipse.jdt.internal.core.Buffer.save(Buffer.java:534); \tat org.eclipse.jdt.internal.core.Openable.save(Openable.java:375); \tat ; org.eclipse.jdt.internal.core.CommitWorkingCopyOperation.executeOperation(CommitWorkingCopyOperation.java:92); \tat ; org.eclipse.jdt.internal.core.JavaModelOperation.execute(JavaModelOperation.java:248); \tat ; org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:452); \tat ; org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1187); \tat ; org.eclipse.jdt.internal.core.JavaModelManager.runOperation(JavaModelManager.java:1016); \tat ; org.eclipse.jdt.internal.core.JavaElement.runOperation(JavaElement.java:508); \tat ; org.eclipse.jdt.internal.core.WorkingCopy.commit(WorkingCopy.java:38); \tat ; org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.doSaveDocument(CompilationUnitDocumentProvider.java:305); \tat ; org.eclipse.ui.texteditor.AbstractDocumentProvider.saveDocument(AbstractDocumentProvider.java:433); \tat ; org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor$1.execute(CompilationUnitEditor.java:145); \tat ; org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:59); \tat ; org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1187); \tat ; org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:73); \tat ; org.eclipse.ui.texteditor.AbstractTextEditor.performSaveOperation(AbstractTextEditor.java:1472); \tat ; org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.doSave(CompilationUnitEditor.java:191); \tat org.eclipse.ui.internal.EditorManager$9.run(EditorManager.java:712); \tat ; org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:229); \tat org.eclipse.jface.operation.ModalContext.run(ModalContext.java:274); \tat ; org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:335); \tat ; org.eclipse.ui.internal.EditorManager.runProgressMonitorOperation(EditorManager.java:570); \tat ; org.eclipse.ui.internal.EditorManager.saveEditor(EditorManager.java:717); \tat ; org.eclipse.ui.internal.WorkbenchPage.saveEditor(WorkbenchPage.java:1225); \tat org.eclipse.ui.internal.SaveAction.run(SaveAction.java:31); \tat ; org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:397); \tat ; org.eclipse.jface.action.ActionContributionItem.handleWidgetEvent(ActionContributionItem.java:351); \tat ; org.eclipse.jface.action.ActionContributionItem.access$0(ActionContributionItem.java:342); \tat ; org.eclipse.jface.action.ActionContributionItem$ActionListener.handleEvent(ActionContributionItem.java:47); \tat org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java(Compiled ; Code)); \tat org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java(Compiled ; Code)); \tat ; org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java(Compiled Code)); \tat ; org.eclipse.swt.widgets.Display.readAndDispatch(Display.java(Compiled Code)); \tat ; org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java(Compiled Code)); \tat org.eclipse.ui.internal.Workbench.run(Workbench.java:676); \tat ; org.eclipse.core.internal.boot.InternalBootLoader.run(InternalBootLoader.java:810); \tat org.eclipse.core.boot.BootLoader.run(BootLoader.java:280); \tat java.lang.reflect.Method.invoke(Native Method); \tat org.eclipse.core.launcher.Main.basicRun(Main.java:151); \tat org.eclipse.core.launcher.Main.run(Main.java:433); \tat org.eclipse.core.launcher.Main.main(Main.java:306)",
+        "route_to": "resources",
+        "severity": "medium",
+        "duplicate_of": "3082",
+        "forensics": {
+            "repo": "eclipse_platform",
+            "labels": "Status: RESOLVED, Resolution: DUPLICATE",
+            "raw_logs": "Version reported: 1.0"
+        },
+        "metadata": {
+            "created_at": "2001-11-09 10:03:00-05:00",
+            "priority_raw": "P3"
+        }
+    }
+]

@@ -1,0 +1,19 @@
+# Git and environments
+.git
+.gitignore
+.venv
+venv/
+env/
+
+# Python cache (Recursively ignored everywhere)
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+**/*.so
+
+# IDEs
+.vscode/
+.idea/
+
+# Local databases or logs (if they shouldn't be baked into the image)
+*.log
